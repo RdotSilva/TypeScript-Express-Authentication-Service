@@ -1,5 +1,9 @@
 import { Router, Response, Request } from "express";
 
+interface RequestWithBody extends Request {
+  body: { [key: string]: string | undefined };
+}
+
 const router = Router();
 
 router.get("/login", (req: Request, res: Response) => {
