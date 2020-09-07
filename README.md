@@ -10,6 +10,14 @@ Back-end authentication service built using TypeScript and Express.
 npm install
 ```
 
+## Running the application
+
+1. Run the parcel command in terminal
+
+```
+npm run start
+```
+
 ## Built With
 
 - Typescript
