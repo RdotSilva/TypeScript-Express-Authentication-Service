@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/RdotSilva/TypeScript-Express-Authentication-Service/issues"
   },
-  "homepage": "https://github.com/RdotSilva/TypeScript-Express-Authentication-Service#readme"
+  "homepage": "https://github.com/RdotSilva/TypeScript-Express-Authentication-Service#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
 }
