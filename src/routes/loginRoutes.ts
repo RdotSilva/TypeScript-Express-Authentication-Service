@@ -24,6 +24,8 @@ router.get("/login", (req: Request, res: Response) => {
 router.post("/login", (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
 
+  // TODO: Wire up user session. Keep track when user is logged in successfully
+
   if (email) {
     res.send(email + password);
   } else {
