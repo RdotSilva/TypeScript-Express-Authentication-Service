@@ -26,8 +26,7 @@ router.post("/login", (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
 
   if (email && password && email === "hi@hi.com" && password === "password") {
-    // Mark person as logged in
-    // Redirect them to the root route
+    // TODO: Debug password coming in as undefined, may need to look into RequestWithBody type
     req.session = { loggedIn: true, secure: false };
     res.redirect("/");
   } else {
