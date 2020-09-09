@@ -26,11 +26,26 @@ router.post("/login", (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
 
   if (email && password && email === "hi@hi.com" && password === "password") {
-    // TODO: Debug password coming in as undefined, may need to look into RequestWithBody type
     req.session = { loggedIn: true, secure: false };
     res.redirect("/");
   } else {
     res.send("Invalid email or password");
+  }
+});
+
+router.get("/", (req: Request, res: Response) => {
+  if (req.session && req.session.loggedIn) {
+    res.send(`
+    <div>
+      <div>You are logged in</div>
+      <a href="/logout">Logout</a>
+    </div>`);
+  } else {
+    res.send(`
+    <div>
+      <div>You are not logged in</div>
+      <a href="/login">Login</a>
+    </div>`);
   }
 });
 
