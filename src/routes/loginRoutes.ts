@@ -24,12 +24,13 @@ router.get("/login", (req: Request, res: Response) => {
 router.post("/login", (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
 
-  // TODO: Wire up user session. Keep track when user is logged in successfully
-
-  if (email) {
-    res.send(email + password);
+  if (email && password && email === "hi@hi.com" && password === "password") {
+    // Mark person as logged in
+    // Redirect them to the root route
+    req.session = { loggedIn: true, secure: false };
+    res.redirect("/");
   } else {
-    res.send("You must provide an email");
+    res.send("Invalid email or password");
   }
 });
 
