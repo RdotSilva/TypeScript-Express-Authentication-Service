@@ -14,6 +14,10 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
   res.send("Not permitted");
 }
 
+function logRequest(req: Request, res: Response, next: NextFunction): void {
+  console.log(req);
+}
+
 const router = Router();
 
 router.get("/login", (req: Request, res: Response) => {
