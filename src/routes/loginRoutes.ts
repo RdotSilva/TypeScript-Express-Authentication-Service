@@ -68,4 +68,12 @@ router.get("/protected", requireAuth, (req: Request, res: Response) => {
   res.send("Welcome to protected route, logged in user");
 });
 
+router.get("/private", requireAuth, (req: Request, res: Response) => {
+  res.send(`
+  <div>
+    <h1>Private Route</h1>
+    <a href="/logout">Logout</a>
+  </div>`);
+});
+
 export { router };
