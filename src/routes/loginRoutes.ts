@@ -60,7 +60,7 @@ router.get("/", (req: Request, res: Response) => {
 });
 
 router.get("/logout", (req: Request, res: Response) => {
-  req.session = undefined;
+  req.session = null;
   res.redirect("/");
 });
 
