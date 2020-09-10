@@ -80,4 +80,8 @@ router.get("/private", requireAuth, (req: Request, res: Response) => {
   </div>`);
 });
 
+router.get("/logRequest", logRequest, (req: Request, res: Response) => {
+  res.send("Request has been logged");
+});
+
 export { router };
