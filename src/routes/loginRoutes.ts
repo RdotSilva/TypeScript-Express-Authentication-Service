@@ -14,10 +14,6 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
   res.send("Not permitted");
 }
 
-function logRequest(req: Request, res: Response, next: NextFunction): void {
-  console.log(req);
-}
-
 const router = Router();
 
 router.get("/login", (req: Request, res: Response) => {
@@ -70,18 +66,6 @@ router.get("/logout", (req: Request, res: Response) => {
 
 router.get("/protected", requireAuth, (req: Request, res: Response) => {
   res.send("Welcome to protected route, logged in user");
-});
-
-router.get("/private", requireAuth, (req: Request, res: Response) => {
-  res.send(`
-  <div>
-    <h1>Private Route</h1>
-    <a href="/logout">Logout</a>
-  </div>`);
-});
-
-router.get("/logRequest", logRequest, (req: Request, res: Response) => {
-  res.send("Request has been logged");
 });
 
 export { router };
