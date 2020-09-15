@@ -13,3 +13,9 @@ function routeBinder(method: string) {
     };
   };
 }
+
+export const get = routeBinder("get");
+export const put = routeBinder("put");
+export const post = routeBinder("post");
+export const del = routeBinder("get");
+export const patch = routeBinder("patch");
