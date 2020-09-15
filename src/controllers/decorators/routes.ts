@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import { Methods } from "./Methods";
 
 /**
  * Binds a http method to a path
@@ -14,8 +15,8 @@ function routeBinder(method: string) {
   };
 }
 
-export const get = routeBinder("get");
-export const put = routeBinder("put");
-export const post = routeBinder("post");
-export const del = routeBinder("get");
-export const patch = routeBinder("patch");
+export const get = Methods.get;
+export const put = Methods.put;
+export const post = Methods.post;
+export const del = Methods.del;
+export const patch = Methods.patch;
