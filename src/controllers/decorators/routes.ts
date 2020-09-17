@@ -16,8 +16,8 @@ function routeBinder(method: string) {
   };
 }
 
-export const get = Methods.Get;
-export const put = Methods.Put;
-export const post = Methods.Post;
-export const del = Methods.Del;
-export const patch = Methods.Patch;
+export const get = routeBinder(Methods.Get);
+export const put = routeBinder(Methods.Put);
+export const post = routeBinder(Methods.Post);
+export const del = routeBinder(Methods.Del);
+export const patch = routeBinder(Methods.Patch);
