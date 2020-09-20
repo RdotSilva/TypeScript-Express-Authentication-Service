@@ -88,3 +88,6 @@ typings/
 
 # JS build folder
 build/
+
+# Prettier config file
+.prettierrc 
