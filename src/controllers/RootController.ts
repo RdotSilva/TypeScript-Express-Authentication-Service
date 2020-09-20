@@ -1,1 +1,3 @@
-// TODO: Create a RootController class and move root routes into this file
+import { Request, Response } from "express";
+import { get } from "./decorators";
+class RootController {}
