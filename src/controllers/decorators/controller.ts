@@ -4,6 +4,11 @@ import { Methods } from "./Methods";
 import { MetadataKeys } from "./MetadataKeys";
 import { NextFunction, Request, Response, RequestHandler } from "express";
 
+/**
+ * Validate that a key exists
+ * @param {string} keys - Keys to validate
+ * @returns {RequestHandler} - Request
+ */
 function bodyValidators(keys: string): RequestHandler {
   return function (req: Request, res: Response, next: NextFunction) {
     if (!req.body) {
