@@ -35,4 +35,20 @@ class RootController {
   getProtected(req: Request, res: Response) {
     res.send("Welcome to protected route, logged in user");
   }
+
+  @get("/secret")
+  getSecretArea(req: Request, res: Response) {
+    if (req.session && req.session.loggedIn) {
+      res.send(`
+      <div>
+        <div>
+          <h1>Secret Area</h1>
+          <p>Congratulations, you have found a secret area!</p>
+        </div>
+      </div>`);
+    } else {
+      res.status(403);
+      res.send("Not permitted");
+    }
+  }
 }
